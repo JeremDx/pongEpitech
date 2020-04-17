@@ -14,7 +14,7 @@ lives2 = 3
 
 pdx = 53
 pdy = 1	
-pdw = 28
+pdw = 24
 pdh = 4
 
 wd = 128
@@ -22,10 +22,16 @@ wd = 128
 function movepaddle()
 	if btn(0) then
 		padx -= 3
+		if padx == wd + padx/2 then
+			padx = wd + padx/2
+		end	
 	end
 		
-	elseif btn(1) then
+ if btn(1) then
 		padx += 3
+			if padx == wd - padx/2 then
+				padx = wd - padx/2
+			end
 	end
 	
 	
@@ -136,5 +142,3 @@ function loseball()
 		end
 	end	
 end
-
-
